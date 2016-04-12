@@ -15,10 +15,10 @@ function changeImage() {
     var image = document.getElementById('myImage');
 	var status;
     if (image.src.match("unlocked")) {
-        image.src = "Locked.png";
+        image.src = "locked.png";
 		status = "Door is Locked" ;
     } else  {
-        image.src = "Unlocked.png";
+        image.src = "unlocked.png";
     	status = "Door is Unlocked";
     }
 	document.getElementById('door').innerHTML = status;
