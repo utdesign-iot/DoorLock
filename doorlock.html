@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<link href="styles.css" rel="stylesheet">
+
+<h1>Door Lock</h1>
+
+<h2 id ='door'>Door is Locked</h2>
+
+<center><img id="myImage" onclick="changeImage()" src="locked.png" > </center>
+
+<script>
+function changeImage() {
+    var image = document.getElementById('myImage');
+	var status;
+    if (image.src.match("unlocked")) {
+        image.src = "locked.png";
+		status = "Door is Locked" ;
+    } else  {
+        image.src = "unlocked.png";
+    	status = "Door is Unlocked";
+    }
+	document.getElementById('door').innerHTML = status;
+}
+</script>
+	
+
+
+
+</body>
+</html>
