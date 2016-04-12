@@ -8,17 +8,17 @@
 
 <h2 id ='door'>Door is Locked</h2>
 
-<center><img id="myImage" onclick="changeImage()" src="locked.png" > </center>
+<center><img id="myImage" onclick="changeImage()" src="Locked.png" > </center>
 
 <script>
 function changeImage() {
     var image = document.getElementById('myImage');
 	var status;
-    if (image.src.match("unlocked")) {
-        image.src = "locked.png";
+    if (image.src.match("Unlocked")) {
+        image.src = "Locked.png";
 		status = "Door is Locked" ;
     } else  {
-        image.src = "unlocked.png";
+        image.src = "Unlocked.png";
     	status = "Door is Unlocked";
     }
 	document.getElementById('door').innerHTML = status;
