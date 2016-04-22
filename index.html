@@ -4,21 +4,38 @@
 
 <link href="styles.css" rel="stylesheet">
 
+
 <h1>Door Lock</h1>
 
 <h2 id ='door'>Door is Locked</h2>
 
-<center><img id="myImage" onclick="changeImage()" src="Locked.png" > </center>
+
+<center><img id="myImage" onclick="changeImage()" src="locked.png" > </center>
+
+<script src="https://code.jquery.com/jquery.js"></script>
 
 <script>
 function changeImage() {
+
+   $.ajax({url: "https://api.particle.io/v1/devices/270024001647343337363432/state?access_token=9641cd0e6239dc7cbedca992efc6c23f0ec36858", 
+                    type: 'POST', 
+                    success: function (result) {
+                    console.log(result);
+                }});
+            
+
+
+
     var image = document.getElementById('myImage');
 	var status;
-    if (image.src.match("Unlocked")) {
-        image.src = "Locked.png";
+    if (image.src.match("unlocked")) {
+        image.src = "locked.png";
+
+
+
 		status = "Door is Locked" ;
     } else  {
-        image.src = "Unlocked.png";
+        image.src = "unlocked.png";
     	status = "Door is Unlocked";
     }
 	document.getElementById('door').innerHTML = status;
